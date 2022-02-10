@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: aliceblue;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+  .span:hover{
+    cursor: pointer;
+  }
+  .icon-box:focus,
+  .icon-box:active {
+    outline: none;
+  }
+  /* Hide scrollbar for IE, Edge add Firefox */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .ml20{
+      margin-left: 20px;
+  }
+  
+  .mr20{
+      margin-right: 20px;
+  }
+  
+  .mt20{
+      margin-top: 20px;
+  }
+  
+  .mb20{
+      margin-bottom: 20px;
+  }
+  
+  .m20{
+      margin: 20;
+  }

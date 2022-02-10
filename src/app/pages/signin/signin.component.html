@@ -1,0 +1,48 @@
+<div class="bootstrap-wrapper"  >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- (ngSubmit)="onSignin()" -->
+                <form  [formGroup]="signinForm" >
+                    <mat-card class="signin-card">
+                        <mat-card class="mat-card-header" background-color="primary"> <mat-card-title>Exam Portal</mat-card-title></mat-card>
+                        <br>
+                        <mat-card-title>Login Here</mat-card-title>
+                        
+                        <!-- username field -->
+                        <div>
+                            
+                                <mat-form-field appearance="outline" class="form-field">
+                                  <mat-label>Username</mat-label>
+                                  <input matInput placeholder="Enter Username" formControlName="username">
+                                  <small class="text-danger" *ngIf="getUsername?.errors?.['usernameInValid']">Username is invalid</small>
+                                </mat-form-field>
+                              
+                        </div>
+                        <!-- password field -->
+                        <div>
+                            
+                                <mat-form-field appearance="outline" class="form-field">
+                                  <mat-label>Password</mat-label>
+                                  <input matInput placeholder="Enter Password" type="password" formControlName="password">
+                                  <small class="text-danger" *ngIf="getPassword?.errors?.['minlength']">Password must contain 8 characters</small>
+                               
+                                </mat-form-field>
+                              
+                        </div>
+                       
+                        <br>    
+                        <mat-divider inset></mat-divider>
+                        <mat-card-actions>
+                          <button mat-raised-button color="primary" type="submit" [disabled]="signinForm?.invalid">Register</button>
+                          <button mat-raised-button color="accent" type="reset">Reset</button>
+                        </mat-card-actions>
+                        <mat-card-footer >
+                          <mat-progress-bar mode="indeterminate" *ngIf="progress"></mat-progress-bar>
+                        </mat-card-footer>
+                      </mat-card>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
