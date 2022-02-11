@@ -5,12 +5,17 @@
    </button>
    <span routerLink="/" class="span">Examiner</span>
    <span class="example-spacer"></span>
-   <button mat-icon-button class="mr20 icon-box" routerLink="/signin">
+   <button mat-icon-button class="mr20 icon-box" routerLink="/signin" *ngIf="!userLogin()">
     <mat-icon >login</mat-icon>
     <small>login</small>
    </button>
 
-   <button routerLink="/signup" mat-icon-button class="mr20 icon-box" >
+   <button mat-icon-button class="mr20 icon-box" (click)="onLogout()" *ngIf="userLogin()">
+    <mat-icon >logout</mat-icon>
+    <small>logout</small>
+   </button>
+
+   <button routerLink="/signup" mat-icon-button class="mr20 icon-box" *ngIf="!userLogin()">
     <mat-icon>person_add</mat-icon>
     <small>Signup</small>
    </button>

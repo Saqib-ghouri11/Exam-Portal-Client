@@ -12,6 +12,10 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
+import {  authInterceptorProviders, RequestInterceptorService } from './interceptors/http.interceptor';
+import { LoginService } from './services/login/login.service';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,9 @@ import { HomeComponent } from './pages/home/home.component';
     SigninComponent,
     ToolbarComponent,
     HomeComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,10 @@ import { HomeComponent } from './pages/home/home.component';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    authInterceptorProviders,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

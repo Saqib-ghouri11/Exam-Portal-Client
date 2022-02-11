@@ -5,6 +5,8 @@ export class Constants{
     static DELETE_USER_BY_ID='user/delete/'
     static GET_USERS='user/'
     static GET_USER_BY_NAME='user/'
-    static USER_LOGIN='/login'
+    static USER_LOGIN='authenticate'
+    static CURRENT_USER='current-user'
+    
 
 }

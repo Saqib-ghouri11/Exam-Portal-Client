@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService:LoginService) { }
+
+  loginSer=this.loginService;
+
+  onLogout(){
+    this.loginService.logout();
+    window.location.reload();
+  }
+  userLogin(){
+    if(this.loginService.isUserLogin()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
   ngOnInit(): void {
   }

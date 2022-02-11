@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <!-- (ngSubmit)="onSignin()" -->
-                <form  [formGroup]="signinForm" >
+                
+                <form  [formGroup]="signinForm" (ngSubmit)="onSignin()">
                     <mat-card class="signin-card">
                         <mat-card class="mat-card-header" background-color="primary"> <mat-card-title>Exam Portal</mat-card-title></mat-card>
                         <br>
@@ -34,7 +34,7 @@
                         <br>    
                         <mat-divider inset></mat-divider>
                         <mat-card-actions>
-                          <button mat-raised-button color="primary" type="submit" [disabled]="signinForm?.invalid">Register</button>
+                          <button mat-raised-button color="primary" type="submit" [disabled]="signinForm?.invalid">Login</button>
                           <button mat-raised-button color="accent" type="reset">Reset</button>
                         </mat-card-actions>
                         <mat-card-footer >

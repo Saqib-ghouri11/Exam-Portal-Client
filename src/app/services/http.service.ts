@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { Constants } from '../classes/constants';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class HttpService {
      );
    }
 
-   login(data:any){
+   login(data:User){
     return this.httpClient.post(Constants.BASE_URL+Constants.USER_LOGIN,data).pipe(
        catchError(this.handleError)
      );
