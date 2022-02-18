@@ -1,0 +1,29 @@
+.mt10{
+    margin-top: 10px;
+}
+.mt20{
+margin-top: 20px;
+}
+.mt25{
+    margin-top: 25px;
+}
+.mt65
+{
+    margin-top: 65px;
+}
+.w100{
+    width: 100%;
+}
+.ml10{
+    margin-left: 10px;
+}
+.mat-card-custom{
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.example-header-image {
+    /* background-image: url(''); */
+    background-image: url('../../../../assets/images/science.png');
+    background-size: cover;
+  }

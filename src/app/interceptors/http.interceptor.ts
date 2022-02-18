@@ -1,12 +1,13 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { catchError, Observable, throwError } from "rxjs";
 import { LoginService } from "../services/login/login.service";
 
 @Injectable()
-export class RequestInterceptorService implements HttpInterceptor{
+export class RequestInterceptor implements HttpInterceptor{
 
-    constructor(private loginService:LoginService){}
+    constructor(private loginService:LoginService,private router:Router){}
  
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -25,7 +26,7 @@ export class RequestInterceptorService implements HttpInterceptor{
             catchError((err) => {
               if (err instanceof HttpErrorResponse) {
                   if (err.status === 401) {
-                  // redirect user to the logout page
+                  this.router.navigate(['']);
                }
             }
             return throwError(err);
@@ -38,7 +39,7 @@ export class RequestInterceptorService implements HttpInterceptor{
 export const authInterceptorProviders=[
     {
         provide: HTTP_INTERCEPTORS,
-        useClass: RequestInterceptorService,
+        useClass: RequestInterceptor,
         multi: true,
     },
 ];

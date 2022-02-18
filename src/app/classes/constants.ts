@@ -7,6 +7,9 @@ export class Constants{
     static GET_USER_BY_NAME='user/'
     static USER_LOGIN='authenticate'
     static CURRENT_USER='current-user'
+  static GET_CATEGORIES= 'category/';
+  static ADD_CATEGORY= 'category/post';
+  static GET_QUIZZES= 'quiz/';
     
 
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
+import { LoginService } from 'src/app/services/login/login.service';
 import { usernameValidator } from 'src/app/validators/username.validator';
 import Swal from 'sweetalert2';
 
@@ -14,7 +16,9 @@ export class SignupComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
               private httpService:HttpService,
-              private _snackBar: MatSnackBar
+              private _snackBar: MatSnackBar,
+              private _loginService:LoginService,
+              private _router:Router
               ) {
     this.signupForm=new FormGroup({});
    }
@@ -40,28 +44,30 @@ export class SignupComponent implements OnInit {
 
 onRegister(){
   this.progress=true;
+  
   this.httpService.register(this.signupForm.value).subscribe(
-    response=>{
+    (response:any)=>{
       console.log(response);
-      this.progress=false;
-      if(response==null){
-        
-        this._snackBar.open('User Already Exist','OK');
-        this.signupForm.reset();
-      }else{
+      this.progress=false; 
+  
         Swal.fire(
           'Congratulations!',
           'You have successfully registered!',
           'success'
         )
+
         this.signupForm.reset();
-      // this._snackBar.open('User Registered Successfully','OK');
-      }
+        this._router.navigate(['/signin']);
+     
     },
-    error=>{
+    (error:any)=>{
       console.log(error);
       this.progress=false;
-      this._snackBar.open('Registration Failed','OK');
+      Swal.fire(
+        'Registration Failed!',
+          ''+error.error.message,
+        'error'
+      )
     }
 
   );

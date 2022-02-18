@@ -1,0 +1,11 @@
+
+  img{
+    border-radius: 50%;
+    height:150pt;
+    width:150pt;
+    border: 2px solid #3f51b5;
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+  }

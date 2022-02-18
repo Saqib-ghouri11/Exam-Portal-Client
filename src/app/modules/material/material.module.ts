@@ -9,6 +9,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatListModule} from '@angular/material/list'; 
+import {MatTableModule} from '@angular/material/table'; 
+import {MatSidenavModule} from '@angular/material/sidenav'; 
 
 const MaterialComponent=[
   MatButtonModule,
@@ -21,6 +24,9 @@ const MaterialComponent=[
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
+  MatListModule,
+  MatTableModule,
+  MatSidenavModule,
   
 
 ]

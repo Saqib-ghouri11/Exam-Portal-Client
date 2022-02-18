@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-title>
+        Categories
+    </mat-card-title>
+    <mat-list *ngFor="let item of categories">
+        <mat-list-item  >
+            <mat-icon mat-list-icon>category</mat-icon>
+           <div mat-line>{{item.title}}</div>
+           <div mat-line>{{item.description}}</div>
+            <mat-divider></mat-divider>
+            </mat-list-item>
+       
+    </mat-list>
+    <div class="container text-center">
+        <button mat-raised-button class="mt10" color="primary" routerLink="/admin-dashboard/add-category">add new category</button>
+    </div>
+</mat-card>
