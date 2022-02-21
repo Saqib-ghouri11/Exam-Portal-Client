@@ -10,6 +10,7 @@ export class Constants{
   static GET_CATEGORIES= 'category/';
   static ADD_CATEGORY= 'category/post';
   static GET_QUIZZES= 'quiz/';
+  static POST_QUIZ= 'quiz/post';
     
 
 }

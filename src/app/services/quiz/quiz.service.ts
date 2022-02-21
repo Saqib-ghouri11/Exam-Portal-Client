@@ -18,7 +18,7 @@ export class QuizService {
   }
 
   addQuiz(quiz:Quiz){
-    this.httpClient.get(Constants.BASE_URL+Constants.GET_QUIZZES).pipe(
+   return this.httpClient.post(Constants.BASE_URL+Constants.POST_QUIZ,quiz).pipe(
       catchError(this.handleError)
     );
   }
