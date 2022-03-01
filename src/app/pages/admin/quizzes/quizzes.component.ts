@@ -18,7 +18,11 @@ export class QuizzesComponent implements OnInit {
 
   deleteQuiz(id:number){
     this.quizService.deleteQuiz(id).subscribe(
+
       (response:any)=>{
+
+
+        this.quizzes=this.quizzes.filter((quiz)=>quiz.id != id);
           Swal.fire(
             "Success!",
             ""+response.message,
