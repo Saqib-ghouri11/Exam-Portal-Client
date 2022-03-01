@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Quiz } from 'src/app/interfaces/quiz';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
@@ -10,7 +11,15 @@ import Swal from 'sweetalert2';
 })
 export class QuizzesComponent implements OnInit {
 
-  constructor(private quizService:QuizService) {
+  constructor(private quizService:QuizService,private router:Router) {
+    this.cat={} as Quiz;
+  }
+
+  cat:Quiz;
+
+  goToUpdateComp(item:Quiz){
+   localStorage.setItem('quizToUpdate',JSON.stringify(item));
+    this.router.navigateByUrl('/admin-dashboard/update-quiz');
   }
 
   quizzes:Array<Quiz>=[];

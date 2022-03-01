@@ -1,3 +1,4 @@
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import {  Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
@@ -18,7 +19,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 const routes: Routes = [
   {path:"",
   component:HomeComponent,
- 
+
 },
   {path:"signup",
   component:SignupComponent,
@@ -28,7 +29,7 @@ const routes: Routes = [
 {
   path:"signin",
   component:SigninComponent,
- 
+
   pathMatch:"full",
   canActivate:[PreventLoggedinAccessGuard],
 },
@@ -60,6 +61,11 @@ children:[
     path:"add-quiz",
     component:AddQuizComponent
   },
+  {
+    path:"update-quiz",
+    component:UpdateQuizComponent
+  },
+
 
 
 ],

@@ -8,6 +8,13 @@ import { Quiz } from 'src/app/interfaces/quiz';
   providedIn: 'root'
 })
 export class QuizService {
+  updateQuiz(value: Quiz) {
+    console.log(Constants.BASE_URL+Constants.PUT_QUIZ);
+
+    return this.httpClient.put(Constants.BASE_URL+Constants.PUT_QUIZ,value).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   constructor(private httpClient:HttpClient) { }
 
