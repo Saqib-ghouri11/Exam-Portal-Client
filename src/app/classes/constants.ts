@@ -11,6 +11,7 @@ export class Constants{
   static ADD_CATEGORY= 'category/post';
   static GET_QUIZZES= 'quiz/';
   static POST_QUIZ= 'quiz/post';
-    
+  static DELETE_QUIZ_BY_ID='quiz/delete/'
+
 
 }

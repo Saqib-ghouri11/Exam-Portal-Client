@@ -23,6 +23,12 @@ export class QuizService {
     );
   }
 
+  deleteQuiz(id:number){
+      return this.httpClient.delete(Constants.BASE_URL+Constants.DELETE_QUIZ_BY_ID+id).pipe(
+        catchError(this.handleError)
+      );
+  }
+
   //  error handler function
   private handleError(error: HttpErrorResponse) {
     let problem;

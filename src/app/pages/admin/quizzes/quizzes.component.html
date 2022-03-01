@@ -1,11 +1,11 @@
 
 
-    <mat-card class="mat-card-custom mt10">   
+    <mat-card class="mat-card-custom mt10">
         <mat-card-title>Quizzes</mat-card-title>
      </mat-card>
 
 <mat-card  *ngFor="let item of quizzes" class="mt10">
-    
+
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{item.title}}</mat-card-title>
@@ -21,10 +21,11 @@
         <button mat-flat-button class="ml10" color="accent">No. of Questions : {{item.numberOfQuestions}}</button>
         <button mat-flat-button class="ml10" color="accent">No. of attempts</button>
         <button mat-raised-button class="ml10" color="primary">update</button>
-        
-        
+        <button mat-raised-button  color="warn" (click)="deleteQuiz(item.id)">delete</button>
 
-        
+
+
+
       </mat-card-actions>
 </mat-card>
 

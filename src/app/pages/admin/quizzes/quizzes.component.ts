@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quiz } from 'src/app/interfaces/quiz';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quizzes',
@@ -15,16 +16,36 @@ export class QuizzesComponent implements OnInit {
   quizzes:Array<Quiz>=[];
 
 
+  deleteQuiz(id:number){
+    this.quizService.deleteQuiz(id).subscribe(
+      (response:any)=>{
+          Swal.fire(
+            "Success!",
+            ""+response.message,
+            "success"
+          );
+      },
+      (error)=>{
+        Swal.fire(
+          "Error!",
+          ""+error.error.message,
+          "error"
+        );
+      }
+
+      );
+  }
+
   getQuiz(){
     this.quizService.getQuizes().subscribe(
       (response:any)=>{
         this.quizzes=response;
         console.log(this.quizzes);
-        
+
       },
       (error)=>{
         console.log(error.error.value);
-        
+
       }
       );
   }
