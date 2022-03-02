@@ -16,7 +16,7 @@
          <p> {{item.description}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button class="ml10" color="primary">Questions</button>
+        <button mat-raised-button class="ml10" color="primary" [routerLink]="'/admin-dashboard/questions/'+item.id+'/'+item.title">Questions</button>
         <button mat-flat-button class="ml10" color="warn">Max Marks : {{item.maxMarks}}</button>
         <button mat-flat-button class="ml10" color="accent">No. of Questions : {{item.numberOfQuestions}}</button>
         <button mat-flat-button class="ml10" color="accent">No. of attempts</button>

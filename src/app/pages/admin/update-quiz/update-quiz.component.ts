@@ -1,3 +1,4 @@
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
@@ -16,6 +17,8 @@ export class UpdateQuizComponent implements OnInit {
     private fb: FormBuilder,
     private categoryService: CategoryService,
     private quizService:QuizService,
+    private _router:ActivatedRoute,
+    private _quizService:QuizService,
   ) {
     this.data = {} as any;
     this.categories = [] as Array<Category>;
@@ -27,6 +30,8 @@ export class UpdateQuizComponent implements OnInit {
   data: any;
 
   quiz: Quiz;
+
+  urlId=0;
 
   categories: Array<Category>;
   quizUpdateForm: FormGroup;
@@ -55,7 +60,15 @@ export class UpdateQuizComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.quiz = JSON.parse(this.data);
+    this.urlId=this._router.snapshot.params['id'];
+   this._quizService.getQuizById(this.urlId).subscribe((response:any)=>{
+      this.quiz=response;
+      console.log(this.quiz);
+
+    },(error)=>{
+      console.log(error);
+
+    });
 
     this.quizUpdateForm = this.fb.group({
       id:[this.quiz.id,[Validators.required]],

@@ -1,3 +1,4 @@
+import { QuestionsComponent } from './pages/admin/questions/questions.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import {  Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -62,9 +63,14 @@ children:[
     component:AddQuizComponent
   },
   {
-    path:"update-quiz",
+    path:"update-quiz/:id",
     component:UpdateQuizComponent
   },
+  {
+    path:"questions/:id/:title",
+    component:QuestionsComponent
+  },
+
 
 
 

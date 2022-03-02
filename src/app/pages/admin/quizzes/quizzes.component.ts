@@ -19,7 +19,7 @@ export class QuizzesComponent implements OnInit {
 
   goToUpdateComp(item:Quiz){
    localStorage.setItem('quizToUpdate',JSON.stringify(item));
-    this.router.navigateByUrl('/admin-dashboard/update-quiz');
+    this.router.navigateByUrl('/admin-dashboard/update-quiz/'+item.id);
   }
 
   quizzes:Array<Quiz>=[];
