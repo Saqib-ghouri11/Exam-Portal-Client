@@ -2,7 +2,7 @@
   <h1>Questions of {{quezTitle}}</h1>
 </mat-card>
 
-<mat-card  *ngFor="let item of questions; let i=index">
+<mat-card  *ngFor="let item of questions; let i=index" class="mt10">
   <mat-card-content>
     <h2>Q{{i+1}}. {{item.content}}</h2>
     <div class="row">
