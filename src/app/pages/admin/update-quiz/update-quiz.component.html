@@ -67,12 +67,14 @@
       <div class="container">
         <button
           mat-raised-button
-          [disabled]="quizUpdateForm?.invalid || quizUpdateForm?.pristine"
+          [disabled]="quizUpdateForm?.invalid"
           type="submit"
         >
+
           <mat-icon> update </mat-icon>
           update quiz
         </button>
+
       </div>
     </form>
   </div>

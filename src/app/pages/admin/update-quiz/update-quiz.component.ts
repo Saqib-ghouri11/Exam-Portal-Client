@@ -1,7 +1,8 @@
+
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
 import { CategoryService } from 'src/app/services/category/category.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { Quiz } from 'src/app/interfaces/quiz';
 import { Category } from 'src/app/interfaces/category';
@@ -34,7 +35,7 @@ export class UpdateQuizComponent implements OnInit {
   urlId = 0;
 
   categories: Array<Category>;
-  quizUpdateForm: FormGroup =this.fb.group({
+  quizUpdateForm=this.fb.group({
     id: ['', [Validators.required]],
     title: ['', [Validators.required]],
     description: ['', [Validators.required]],
@@ -70,13 +71,25 @@ export class UpdateQuizComponent implements OnInit {
     this._quizService.getQuizById(this.urlId).subscribe(
       (response: any) => {
         this.quiz = response;
-        this.quizUpdateForm.get('title')?.setValue( this.quiz.title);
-        this.quizUpdateForm.get('description')?.setValue( this.quiz.description);
-        this.quizUpdateForm.get('maxMarks')?.setValue( this.quiz.maxMarks);
-        this.quizUpdateForm.get('numberOfQuestions')?.setValue( this.quiz.numberOfQuestions);
-        this.quizUpdateForm.get('active')?.setValue( this.quiz.active);
-        this.quizUpdateForm.get('category.id')?.setValue( this.quiz.category.id);
-        console.log(this.quiz);
+        let data={
+
+        }
+        this.quizUpdateForm.setValue({
+          id:this.quiz.id,
+          title: this.quiz.title,
+        description: this.quiz.description,
+        maxMarks: this.quiz.maxMarks,
+        numberOfQuestions: this.quiz.numberOfQuestions,
+       active: this.quiz.active,
+        category:{
+          id:this.quiz.category.id,
+          title:this.quiz.category.title,
+          description:this.quiz.description
+        },
+
+      });
+
+        this.quizUpdateForm.asyncValidator;
       },
       (error) => {
         console.log(error);
