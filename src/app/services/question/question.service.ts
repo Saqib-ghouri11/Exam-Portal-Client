@@ -1,3 +1,4 @@
+import { Questions } from 'src/app/interfaces/questions';
 import { Constants } from 'src/app/classes/constants';
 import { catchError, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -9,9 +10,16 @@ import { Injectable } from '@angular/core';
 export class QuestionService {
   constructor(private _httpClient: HttpClient) {}
 
+  //get all questions of quiz by id
   getAllQuestionsByQuizId(id: number) {
     return this._httpClient.get(Constants.BASE_URL+Constants.GET_ALL_QUESTIONS_BY_ID+id).pipe(catchError(this.handleError));
   }
+
+  //post a question of a quiz
+  postQuestionOfQuiz(data:Questions) {
+    return this._httpClient.post(Constants.BASE_URL+Constants.POST_QUESTION,data).pipe(catchError(this.handleError));
+  }
+
   //  error handler function
   private handleError(error: HttpErrorResponse) {
     let problem;

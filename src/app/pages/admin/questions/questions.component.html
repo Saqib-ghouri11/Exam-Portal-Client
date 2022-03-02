@@ -1,7 +1,11 @@
 <mat-card class="cus-card mt10">
   <h1>Questions of {{quezTitle}}</h1>
 </mat-card>
-
+<div class="container text-center mt10">
+  <button mat-raised-button color="primary" [routerLink]="'/admin-dashboard/add-question/'+quezId+'/'+quezTitle">
+    <mat-icon>add</mat-icon>
+    add question</button>
+</div>
 <mat-card  *ngFor="let item of questions; let i=index" class="mt10">
   <mat-card-content>
     <h2>Q{{i+1}}. {{item.content}}</h2>

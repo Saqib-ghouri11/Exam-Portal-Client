@@ -1,3 +1,4 @@
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { QuestionsComponent } from './pages/admin/questions/questions.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import {  Component, NgModule } from '@angular/core';
@@ -70,6 +71,12 @@ children:[
     path:"questions/:id/:title",
     component:QuestionsComponent
   },
+  {
+    path:"add-question/:id/:title",
+    component:AddQuestionComponent
+  },
+
+
 
 
 
