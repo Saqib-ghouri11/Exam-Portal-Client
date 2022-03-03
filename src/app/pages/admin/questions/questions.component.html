@@ -26,6 +26,13 @@
       </div>
     </div>
     <mat-divider class="mt10"></mat-divider>
-    <p class="mt10">Correct Answer: {{item.answer}} </p>
+    <p class="mt20"><b>Correct Answer:</b> {{item.answer}} </p>
+    <mat-card-actions>
+     <div class="container text-right">
+      <button mat-raised-button color="primary" [routerLink]="'/admin-dashboard/update-question/'+item.id">update</button>
+      <button mat-raised-button color="warn" (click)="deleteQuestion(item.id)">delete</button>
+     </div>
+    </mat-card-actions>
+
       </mat-card-content>
 </mat-card>

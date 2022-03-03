@@ -8,6 +8,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class QuestionService {
+  // put question of quiz
+  putQuestionOfQuiz(value: Questions) {
+    return this._httpClient.put(Constants.BASE_URL+Constants.PUT_QUESTION,value).pipe(catchError(this.handleError));
+  }
   constructor(private _httpClient: HttpClient) {}
 
   //get all questions of quiz by id
@@ -20,6 +24,18 @@ export class QuestionService {
     return this._httpClient.post(Constants.BASE_URL+Constants.POST_QUESTION,data).pipe(catchError(this.handleError));
   }
 
+  // delete question
+  deleteQuestion(id:number){
+    return this._httpClient.delete(Constants.BASE_URL+Constants.DELETE_QUESTION_BY_ID+id).pipe(
+      catchError(this.handleError)
+    )
+  }
+  // get question by id
+  getQuestionById(id:number){
+    return this._httpClient.get(Constants.BASE_URL+Constants.GET_QUESTION_BY_ID+id).pipe(
+      catchError(this.handleError)
+    )
+  }
   //  error handler function
   private handleError(error: HttpErrorResponse) {
     let problem;

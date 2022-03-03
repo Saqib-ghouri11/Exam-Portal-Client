@@ -1,3 +1,4 @@
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { QuestionsComponent } from './pages/admin/questions/questions.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
@@ -74,6 +75,10 @@ children:[
   {
     path:"add-question/:id/:title",
     component:AddQuestionComponent
+  },
+  {
+    path:"update-question/:id",
+    component:UpdateQuestionComponent
   },
 
 

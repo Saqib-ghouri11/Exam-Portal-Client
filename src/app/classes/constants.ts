@@ -16,6 +16,9 @@ export class Constants{
   static GET_QUIZ_BY_ID='quiz/';
   static GET_ALL_QUESTIONS_BY_ID='question/quiz/admin/';
   static POST_QUESTION='question/post';
+  static DELETE_QUESTION_BY_ID='question/delete/';
+  static GET_QUESTION_BY_ID='question/';
+  static PUT_QUESTION='question/put';
 
 
 }
