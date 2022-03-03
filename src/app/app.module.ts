@@ -27,6 +27,8 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { QuestionsComponent } from './pages/admin/questions/questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     QuestionsComponent,
     AddQuestionComponent,
     UpdateQuestionComponent,
- 
+    UserWelcomeComponent,
+    UserSidebarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,7 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
   ],
   providers: [
     LoginService,

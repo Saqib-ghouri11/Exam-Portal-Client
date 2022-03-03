@@ -1,0 +1,11 @@
+.cus-card{
+  background-color: #2e2e2e;
+  color: white;
+}
+.mt10{
+  margin-top: 10px;
+}
+.example-header-image {
+  background-image: url('https://yt3.ggpht.com/ytc/AKedOLTSZbSy3QKyck5usjP8fJxUmZGAuGb_ABajBAAF=s900-c-k-c0x00ffffff-no-rj');
+  background-size: cover;
+}

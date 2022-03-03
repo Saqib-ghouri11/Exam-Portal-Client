@@ -26,27 +26,42 @@ export class QuizzesComponent implements OnInit {
 
 
   deleteQuiz(id:number){
-    this.quizService.deleteQuiz(id).subscribe(
 
-      (response:any)=>{
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.quizService.deleteQuiz(id).subscribe(
+
+          (response:any)=>{
 
 
-        this.quizzes=this.quizzes.filter((quiz)=>quiz.id != id);
-          Swal.fire(
-            "Success!",
-            ""+response.message,
-            "success"
+            this.quizzes=this.quizzes.filter((quiz)=>quiz.id != id);
+              Swal.fire(
+                "Success!",
+                ""+response.message,
+                "success"
+              );
+          },
+          (error)=>{
+            Swal.fire(
+              "Error!",
+              ""+error.error.message,
+              "error"
+            );
+          }
+
           );
-      },
-      (error)=>{
-        Swal.fire(
-          "Error!",
-          ""+error.error.message,
-          "error"
-        );
       }
+    })
 
-      );
+
   }
 
   getQuiz(){

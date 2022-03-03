@@ -1,3 +1,4 @@
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { QuestionsComponent } from './pages/admin/questions/questions.component';
@@ -80,19 +81,23 @@ children:[
     path:"update-question/:id",
     component:UpdateQuestionComponent
   },
-
-
-
-
-
-
 ],
 },
 {path:"user-dashboard",
 component:UserDashboardComponent,
-pathMatch:"full",
 canActivate:[UserGuardGuard],
+children:[
+  {
+    path:"",
+    component:UserWelcomeComponent,
+  },
+  {
+    path:"profile",
+    component:ProfileComponent,
+  },
+],
 },
+
 ];
 
 @NgModule({
