@@ -21,7 +21,7 @@
 
             <button mat-stroked-button color="accent">Qs:{{item.numberOfQuestions}}</button>
             <button mat-stroked-button color="warn">M.M:{{item.maxMarks}}</button>
-            <button mat-raised-button color="warn">Start</button>
+            <button mat-raised-button color="warn" [routerLink]="'/user-dashboard/instructions/'+item.id">Start</button>
           </mat-card-actions>
 
 

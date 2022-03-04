@@ -1,0 +1,44 @@
+<mat-card class="mt10">
+  <mat-card-title>
+    Read the instructions carefully before starting the test.
+  </mat-card-title>
+  <mat-divider></mat-divider>
+
+  <mat-card-content class="mt10">
+    <ul class="mt10">
+      <li>
+        This quiz is for testing purpose.
+      </li>
+      <li>
+        All the questions are of MCQ type.
+      </li>
+      <li>
+       You are allowed to choose only one answers.
+      </li>
+      <li>
+        This quiz is time restricted so submit it with in time.
+       </li>
+       <li>
+       You are not allowed to navigate back after starting of quiz.
+       </li>
+       <li>
+        You can attempt quiz any number of times and there is no negative markings for wrong answers.
+        </li>
+    </ul>
+    <mat-divider></mat-divider>
+    <h1 class="mt10">Instructions</h1>
+    <ul class="mt10">
+      <li>This quiz contains <b>{{quiz.numberOfQuestions}} questions</b></li>
+      <li>This questions contains <b>{{quiz.maxMarks/quiz.numberOfQuestions}} marks</b></li>
+      <li>This quiz contains <b>{{quiz.maxMarks}} max-marks</b></li>
+
+      <li>This quiz is of <b>{{quiz.numberOfQuestions*2}} minutes</b></li>
+      <li>Each question can be done in <b>2 minutes</b></li>
+
+
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Start</button>
+  </mat-card-actions>
+</mat-card>

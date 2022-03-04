@@ -29,6 +29,8 @@ import { AddQuestionComponent } from './pages/admin/add-question/add-question.co
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.com
     UpdateQuestionComponent,
     UserWelcomeComponent,
     UserSidebarComponent,
+    InstructionsComponent,
+    StartQuizComponent,
 
   ],
   imports: [

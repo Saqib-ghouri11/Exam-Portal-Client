@@ -1,3 +1,4 @@
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
@@ -98,6 +99,10 @@ children:[
   {
     path:":id",
     component:UserWelcomeComponent,
+  },
+  {
+    path:"instructions/:id",
+    component:InstructionsComponent,
   },
 ],
 },
