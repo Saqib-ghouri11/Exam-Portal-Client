@@ -8,6 +8,11 @@ import { Quiz } from 'src/app/interfaces/quiz';
   providedIn: 'root'
 })
 export class QuizService {
+  getByCategoryActiveQuizzes(catId: number) {
+    return this.httpClient.get(Constants.BASE_URL+Constants.GET_BY_CATEGORY_ACTIVE_QUIZZES+catId).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   getQuizById(id:number) {
     return this.httpClient.get(Constants.BASE_URL+Constants.GET_QUIZ_BY_ID+id).pipe(
@@ -26,6 +31,11 @@ export class QuizService {
 
   getQuizes(){
     return this.httpClient.get(Constants.BASE_URL+Constants.GET_QUIZZES).pipe(
+      catchError(this.handleError)
+    );
+  }
+  getActiveQuizzes(){
+    return this.httpClient.get(Constants.BASE_URL+Constants.GET_ACTIVE_QUIZZES).pipe(
       catchError(this.handleError)
     );
   }

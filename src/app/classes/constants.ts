@@ -19,6 +19,8 @@ export class Constants{
   static DELETE_QUESTION_BY_ID='question/delete/';
   static GET_QUESTION_BY_ID='question/';
   static PUT_QUESTION='question/put';
+  static GET_ACTIVE_QUIZZES='quiz/active';
+  static GET_BY_CATEGORY_ACTIVE_QUIZZES='quiz/active/';
 
 
 }

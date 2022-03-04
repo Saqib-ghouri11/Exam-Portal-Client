@@ -95,6 +95,10 @@ children:[
     path:"profile",
     component:ProfileComponent,
   },
+  {
+    path:":id",
+    component:UserWelcomeComponent,
+  },
 ],
 },
 

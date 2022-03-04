@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
     private loginService:LoginService,
     private _snackbar:MatSnackBar,
     private router:Router,
-    ) { 
+    ) {
     this.signinForm=new FormGroup({});
   }
 
@@ -42,7 +42,7 @@ export class SigninComponent implements OnInit {
        //saving token to local storage
         this.loginService.loginUser(response.token);
         console.log(this.loginService.getToken());
-        
+
         //saving current user data to local storage
         this.loginService.getCurrentUser().subscribe((user:any)=>{
           this.loginService.setUserDetails(user);
@@ -59,13 +59,13 @@ export class SigninComponent implements OnInit {
           }
           //redirect if role is NORMAL to user dashboard
           else if(user.authorities[0].authority=='NORMAL'){
-            this.router.navigate(['user-dashboard']);
+            this.router.navigate(['user-dashboard/'+0]);
           }
-          
-          
+
+
         });
-       
-       
+
+
       },
       (error:any)=>{
         this.progress=false;
