@@ -19,6 +19,11 @@ export class QuestionService {
     return this._httpClient.get(Constants.BASE_URL+Constants.GET_ALL_QUESTIONS_BY_ID+id).pipe(catchError(this.handleError));
   }
 
+  //get all user questions of quiz by id
+  getAllUserQuestionsByQuizId(id: number) {
+    return this._httpClient.get(Constants.BASE_URL+Constants.GET_ALL_USER_QUESTIONS_BY_ID+id).pipe(catchError(this.handleError));
+  }
+
   //post a question of a quiz
   postQuestionOfQuiz(data:Questions) {
     return this._httpClient.post(Constants.BASE_URL+Constants.POST_QUESTION,data).pipe(catchError(this.handleError));

@@ -1,3 +1,4 @@
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
@@ -105,6 +106,10 @@ children:[
     component:InstructionsComponent,
   },
 ],
+},
+{
+  path:'start-quiz/:id'
+  ,component:StartQuizComponent
 },
 
 ];

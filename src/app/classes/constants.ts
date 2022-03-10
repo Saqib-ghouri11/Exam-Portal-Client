@@ -21,6 +21,7 @@ export class Constants{
   static PUT_QUESTION='question/put';
   static GET_ACTIVE_QUIZZES='quiz/active';
   static GET_BY_CATEGORY_ACTIVE_QUIZZES='quiz/active/';
+  static GET_ALL_USER_QUESTIONS_BY_ID='question/quiz/';
 
 
 }
