@@ -109,7 +109,8 @@ children:[
 },
 {
   path:'start-quiz/:id'
-  ,component:StartQuizComponent
+  ,component:StartQuizComponent,
+  canActivate:[UserGuardGuard],
 },
 
 ];
