@@ -15,6 +15,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const MaterialComponent=[
   MatButtonModule,
@@ -33,6 +34,7 @@ const MaterialComponent=[
   MatSlideToggleModule,
   MatSelectModule,
   MatRadioModule,
+  MatProgressSpinnerModule,
 ]
 
 @NgModule({

@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
@@ -48,12 +48,61 @@
 
         </mat-card>
         <div class="container text-right">
-          <button mat-raised-button color="primary" class="mt10">Submit Quiz</button>
+          <button mat-raised-button color="primary" class="mt10" (click)="onSubmitQuiz()">Submit Quiz</button>
         </div>
       </div>
       <div class="col-md-2">
         <!-- progress -->
-        <h2>progress</h2>
+        <mat-card >
+          <mat-card-header>
+            <mat-card-title>
+              Progress
+            </mat-card-title>
+            <br>
+
+          </mat-card-header>
+          <mat-card-content>
+            <p>Quiz will be automatically be submitted after completion of the timer </p>
+            <h3>Time Remaining</h3>
+            <h2>{{getFormatedTimer()}}</h2>
+
+            <div class="container text-center">
+              <mat-progress-spinner
+              class="example-margin"
+              [color]="color"
+              [mode]="mode"
+              [value]="(timer/total)*100">
+          </mat-progress-spinner>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <mat-card class="mt10">
+         <mat-card-header>
+          <mat-card-title>
+            Result
+          </mat-card-title>
+         </mat-card-header>
+         <mat-card-content>
+           <h2>marks obtained: <span [innerText]="obtMarks"></span></h2>
+           <h2>Total Attempts: <span [innerText]="attempts"></span></h2>
+           <h2>Total Correct Answers: <span [innerText]="correctAnswers"></span></h2>
+         </mat-card-content>
+         <mat-card-actions class="text-right">
+          <button mat-raised-button [routerLink]="'/user-dashboard/0'" color="primary">Home</button>
+
+         </mat-card-actions>
+        </mat-card>
       </div>
     </div>
   </div>
