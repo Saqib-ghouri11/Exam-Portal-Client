@@ -16,6 +16,13 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxUiLoaderModule,NgxUiLoaderConfig, SPINNER, POSITION,PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule  } from "ngx-ui-loader";
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsType: SPINNER.squareJellyBox,
+  fgsPosition: POSITION.centerCenter,
+  text : 'Fetching...'
+  };
 
 const MaterialComponent=[
   MatButtonModule,
@@ -35,6 +42,10 @@ const MaterialComponent=[
   MatSelectModule,
   MatRadioModule,
   MatProgressSpinnerModule,
+  NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+  NgxUiLoaderHttpModule.forRoot({ showForeground: true,
+
+  }),
 ]
 
 @NgModule({
